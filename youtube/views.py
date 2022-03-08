@@ -44,11 +44,11 @@ def home(request):
         print()
         if input_data is not None:
             results=Item.objects.filter(Q(name__contains=input_data)|Q(description__contains=input_data))
-            return render(request, 'sample.html',{'vids':results })
+            return render(request, 'index.html',{'vids':results })
         else:
-            return render(request, 'sample.html',{'vids':vids })
+            return render(request, 'index.html',{'vids':vids })
     else:
-        return render(request, 'sample.html',{'vids':vids })
+        return render(request, 'index.html',{'vids':vids })
     # print("data", data)
     # vid1=Item()
     # vid1.Y_id='YpTmcCBBdTE'
