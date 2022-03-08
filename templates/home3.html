@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet1" href="self.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Arshit's Youtube</title>
+</head>
+<body>
+  <header class="header">
+    <h1> It's my player not your youtube</h1>
+    <form class="search-bar">
+      <input class="search-input" type="search" placeholder="Search" aria-label="Search" />
+      <button type="button">Search</button>
+    </form>
+  </header>
+  {% for vid in vids %}
+      <div class="column">
+    <div class="w3-container">
+      <button onclick="document.getElementById('{{vid.id}}').style.display='block'" class="w3-button w3-black"><img src="https://img.youtube.com/vi/{{vid.Y_id}}/maxresdefault.jpg " width="200" height="200"  alt="" /></button>
+    
+    
+      <div id="{{vid.id}}" class="w3-modal">
+        <div class="w3-modal-content">
+          <div class="w3-container">
+            <span onclick="document.getElementById('{{vid.id}}').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{vid.Y_id}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        {% endfor %}
+      
+    </section>
+    </section>
+  </div>
+</body>
+</html>

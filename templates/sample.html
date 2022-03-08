@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="self.css"> -->
+  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Arshit's Youtube</title>
+</head>
+<body>
+  <header class="header">
+    <h1> It's my player not your youtube</h1>
+    <form>
+      <input id="q" placeholder="search" type="text" name="textbox">
+      <input type="button" onclick="filter('arshit')" value="submit">
+
+    </form>
+  </header>
+  <div class="container">
+    <div class="videos" >
+  {% for vid in vids %}
+  <div class="#" style="float: left;
+  width:5%; 
+  margin-right: 20%; display:inline-block; text-align:center; vertical-align:top;" >
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#{{vid.id}}"><img src="https://img.youtube.com/vi/{{vid.Youtube_id}}/maxresdefault.jpg " width="200" height="200"  alt="" /></button>
+    <span style="display:block; text-align:center; width:150px;">{{vid.id}}  {{vid.name}}</span>
+  
+  </div>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="{{vid.id}}" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{vid.Youtube_id}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        
+      </div>
+    
+  </div>
+  
+    <!-- <div class="container">           
+      <button onclick="document.getElementById('{{vid.id}}').style.display='block'" class="w3-button w3-black"><img src="https://img.youtube.com/vi/{{vid.Y_id}}/maxresdefault.jpg " width="200" height="200"  alt="" /> 
+    </div>   -->
+   
+    
+      {% endfor %}
+    </div>
+      
+      <!-- <div id="{{vid.id}}" class="w3-modal">
+        <div class="w3-modal-content">
+          <div class="w3-container">
+            <span onclick="document.getElementById('{{vid.id}}').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{vid.Y_id}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+        
+      
+    </section>
+    </section>
+  </div>
+</body>
+</html>
